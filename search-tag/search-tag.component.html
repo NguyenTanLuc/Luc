@@ -1,0 +1,21 @@
+<section class="filter-wrapper">
+  <form class="keyword-wrapper" (ngSubmit)="searchTag(form.value)">
+    <input
+      type="text"
+      id="keyword"
+      name="text"
+      placeholder="Search for artists..."
+      autofocus
+      #form
+    />
+    <input type="submit" style="display: none" />
+  </form>
+
+  <div style="height:300px; overflow: scroll" (scroll)="onWindowScroll($event)">
+    <ul class="filter-select">
+      <li class="filter-select-list" *ngFor="let tag of tags">
+        <p class="artist-name">{{ tag.name }}</p>
+      </li>
+    </ul>
+  </div>
+</section>
